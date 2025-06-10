@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple for Bloxd</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .fade-in {
+      animation: fadeIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .parallax-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.1;
+      z-index: 0;
+      will-change: transform;
+    }
+
+    /* Enforce orange for all links */
+    a {
+      color: #f97316; /* Tailwind orange-500 */
+      text-decoration: underline;
+    }
+
+    a:hover,
+    a:focus {
+      color: #ea580c; /* Tailwind orange-600 */
+      outline-color: #ea580c;
+    }
+
+    a:focus {
+      outline-style: solid;
+      outline-width: 2px;
+      outline-offset: 2px;
+    }
+
+    a:visited {
+      color: #fb923c; /* Tailwind orange-400 */
+    }
+
+    a:active {
+      color: #c2410c; /* Tailwind orange-700 */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+  <script>
+    document.addEventListener("mousemove", (e) => {
+      const banner = document.querySelector(".parallax-banner");
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      banner.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+
+  <nav class="bg-gray-800 shadow-lg fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Simple Client-Bloxd.io</h1>
+      <div class="space-x-4">
+        <a href="#home" class="hover:text-orange-400 transition">Home</a>
+        <a href="#about" class="hover:text-orange-400 transition">Launches</a>
+        <a href="#how" class="hover:text-orange-400 transition">Enable</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="h-screen flex items-center justify-center text-center pt-24 fade-in relative overflow-hidden">
+    <img src="https://raw.githubusercontent.com/Bloxdy/texture-packs/refs/heads/main/default/textures/diamond_sword.png" alt="Banner" class="parallax-banner" />
+    <div class="flex flex-col items-center space-y-4 z-10">
+      <div class="flex items-center space-x-4">
+        <img src="https://bloxdium.pages.dev/images/Bloxd.io_Logo.jpeg" alt="Bloxd" class="w-20 h-20 rounded-full border-2 border-orange-400" />
+        <h2 class="text-4xl md:text-6xl font-bold">Simple Client</h2>
+      </div>
+      <p class="text-lg text-gray-300 max-w-xl">Bloxd Hacked Client Launcher</p>
+    </div>
+
+  </section>
+
+  <section id="about" class="py-20 px-6 md:px-20 bg-gray-800 fade-in">
+    <h3 class="text-3xl font-semibold mb-6">About & Launch hacked client</h3>
+    <p class="text-gray-300 max-w-3xl">
+      Simple is a hacked client for Bloxd.io, designed to enhance your gaming experience with powerful features and a user-friendly interface. Whether you're looking to dominate the game or just have some fun, Simple has got you covered.
+    </p>
+
+    <div class="mt-12 bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+      <a href="https://bloxd.io" target="_blank"
+        class="inline-block bg-orange-600 hover:bg-orange-700 text-white text-lg font-semibold px-6 py-3 rounded-full transition transform hover:scale-105">
+        Launch Bloxd.io
+      </a>
+    </div>
+  </section>
+
+  <section id="how" class="h-screen flex flex-col items-center justify-center text-center pt-24 fade-in relative overflow-hidden px-6 md:px-20">
+    <h3 class="text-3xl font-semibold mb-6">How to enable</h3>
+    <p class="text-gray-300 max-w-3xl mb-8">
+      Open Chrome &gt; Click Extensions &gt; Search Tampermonkey &gt; Add to Chrome &gt;
+      <a href="https://raw.githubusercontent.com/Noah-Li2012/simple16/main/simple.user.js" target="_blank" class="text-orange-400 underline hover:text-orange-600">
+        Click here to download the script
+      </a> &gt; Enable the script and refresh the page. If not working, please enable website pop-ups on your browser.
+    </p>
+  </section>
+
+</body>
+
+</html>
